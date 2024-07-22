@@ -1,6 +1,6 @@
 # Java Coffee Shop
 
-This application is an intentional vulnerable Java Spring-Boot application with Thymeleaf.
+This application is an intentionally vulnerable Java Spring-Boot application with Thymeleaf.
 It is use for training purposes only!
 
 The code is and layout of the application is originally based on https://github.com/hieutdo/waa-coffee-shop, and a workshop created by [Brian Vermeer](https://brianvermeer.nl).
