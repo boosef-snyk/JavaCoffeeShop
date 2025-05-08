@@ -11,7 +11,7 @@
 			"installMaven": "true",
 			"installGradle": "false"
 		},
-		"ghcr.io/devcontainers-contrib/features/snyk-cli:1": {}
+		"ghcr.io/devcontainers-contrib/features/snyk-cli:latest": {}
 	},
 	"customizations": {
 		"vscode": {
