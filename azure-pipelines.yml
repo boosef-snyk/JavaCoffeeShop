@@ -1,0 +1,20 @@
+trigger:
+- main
+
+variables: 
+  SNYK_API: http://api.au.snyk.io/ 
+
+pool:
+  vmImage: ubuntu-latest
+steps:
+- task: SnykSecurityScan@1
+  inputs:
+    serviceConnectionEndpoint: 'Snyk AU Auth'
+    testType: 'app'
+    monitorWhen: 'always'
+    failOnIssues: true
+    additionalArguments: '-d'
+    projectName: 'ADO Scan in AU'
+    organization: '584c15d1-00bf-4d81-a25e-43a6c2d425dc'
+  env: 
+    SNYK_API: '$(SNYK_API)'
