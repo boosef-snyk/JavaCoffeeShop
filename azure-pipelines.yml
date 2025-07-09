@@ -7,13 +7,12 @@
 trigger:
 - main
 
+variables: 
+  SNYK_API: http://api.au.snyk.io/ 
+
 pool:
   vmImage: ubuntu-latest
-
 steps:
-
-variables: SNYK_API: http://api.au.snyk.io/ 
-
 - task: SnykSecurityScan@1
   inputs:
     serviceConnectionEndpoint: 'Snyk AU Auth'
@@ -21,4 +20,5 @@ variables: SNYK_API: http://api.au.snyk.io/
     monitorWhen: 'always'
     failOnIssues: true
     additionalArguments: '-d'
-  env: SNYK_API: '$(SNYK_API)'
+  env: 
+    SNYK_API: '$(SNYK_API)'
