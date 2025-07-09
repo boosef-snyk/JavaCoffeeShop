@@ -1,0 +1,24 @@
+# Starter pipeline
+
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+
+variables: SNYK_API: http://api.au.snyk.io/ 
+
+- task: SnykSecurityScan@1
+  inputs:
+    serviceConnectionEndpoint: 'Snyk AU Auth'
+    testType: 'app'
+    monitorWhen: 'always'
+    failOnIssues: true
+    additionalArguments: '-d'
+  env: SNYK_API: '$(SNYK_API)'
